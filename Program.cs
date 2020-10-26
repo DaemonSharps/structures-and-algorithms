@@ -33,7 +33,8 @@ namespace structures_and_algorithms
             {
                 Console.Write("Enter First word"); var s1 = Console.ReadLine();
                 Console.Write("Enter Second word"); var s2 = Console.ReadLine();
-                Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1,s2 )}"); 
+                Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1,s2 )}");
+                Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1, s2,true)}");
             }
             Console.ReadLine();
         }
