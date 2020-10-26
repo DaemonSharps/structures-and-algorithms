@@ -1,6 +1,6 @@
 ﻿using structures_and_algorithms.Algorithms.Fast_Pow;
 using structures_and_algorithms.LInkedList;
-using structures_and_algorithms.Algorithms;
+using structures_and_algorithms.Algorithms.Sort;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using structures_and_algorithms.Algorithms.Levenstain_distance;
@@ -36,6 +36,19 @@ namespace structures_and_algorithms
                 Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1,s2 )}");
                 Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1, s2,true)}");
             }
+            {
+                Console.WriteLine("Enter numbers");
+               var entNums= Console.ReadLine().Split(new[] { " ", ",", ";" },StringSplitOptions.RemoveEmptyEntries);
+                var numbersArr = new int[entNums.Length];
+                for (int i=0;i<entNums.Length;i++)
+                {
+                    numbersArr[i] = Convert.ToInt32(entNums[i]);
+                }
+                Console.WriteLine("Sorted array: {0}",string.Join(", ", RandomSort.Sort(numbersArr)));
+                Console.WriteLine("Sorted array: {0}", string.Join(", ", BubbleSort.Sort(numbersArr)));
+
+            }
+            
             Console.ReadLine();
         }
     }
