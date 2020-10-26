@@ -3,6 +3,7 @@ using structures_and_algorithms.LInkedList;
 using structures_and_algorithms.Algorithms;
 using System;
 using System.Security.Cryptography.X509Certificates;
+using structures_and_algorithms.Algorithms.Levenstain_distance;
 
 namespace structures_and_algorithms
 {
@@ -28,6 +29,11 @@ namespace structures_and_algorithms
                     Console.WriteLine($"{i} in {i + 2} ={Pow.Iter(i, i * 2)}");
                     Console.WriteLine($"{i} in {15} ={Pow.Byte(i, 15)}");
                 }
+            }
+            {
+                Console.Write("Enter First word"); var s1 = Console.ReadLine();
+                Console.Write("Enter Second word"); var s2 = Console.ReadLine();
+                Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1,s2 )}"); 
             }
             Console.ReadLine();
         }
