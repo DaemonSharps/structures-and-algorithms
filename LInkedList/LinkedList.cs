@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Transactions;
 
 namespace structures_and_algorithms.LInkedList
 {
@@ -53,14 +54,30 @@ namespace structures_and_algorithms.LInkedList
             return false;
 
         }
-        public IEnumerator<T> GetEnumerator()
+public bool contains(T data)
         {
-            throw new NotImplementedException();
+            Node<T> current = head;
+            while(current!=null)
+            {
+                if (current.Data.Equals(data))
+                    return true;
+                current = current.Next;
+            }
+            return false;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return ((IEnumerable)this).GetEnumerator();
+        }
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            Node<T> curr = head;
+            while (curr != null)
+            {
+                yield return curr.Data;
+                curr = curr.Next;
+            }
         }
     }
 }
