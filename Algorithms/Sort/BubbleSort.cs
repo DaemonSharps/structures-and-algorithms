@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-    class BubbleSort
+   public static class BubbleSort
     {
       public  static int[] Sort(int[] arr)
         {
