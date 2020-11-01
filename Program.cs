@@ -64,8 +64,8 @@ namespace structures_and_algorithms
                 Console.WriteLine("Sorted array Stooge: {0}", string.Join(", ", StoogeSort.Sort(numbersArr)));
                 Console.WriteLine("Sorted array Pancake: {0}", string.Join(", ", PancakeSort.Sort(numbersArr)));
                 Console.WriteLine("Sorted array Shell: {0}", string.Join(", ", ShellSort.Sort(numbersArr)));
-                /*     Console.WriteLine("Sorted array Merge: {0}", string.Join(", ", MergeSort.Sort(numbersArr))); //doesnt work*/
-                Console.WriteLine("Sorted array Selection: {0}", string.Join(", ", SelectionSort.Sort(numbersArr)));
+                 Console.WriteLine("Sorted array Merge: {0}", string.Join(", ", MergeSort.Sort(numbersArr)));
+               Console.WriteLine("Sorted array Selection: {0}", string.Join(", ", SelectionSort.Sort(numbersArr)));
                 Console.WriteLine(line);
             }
             

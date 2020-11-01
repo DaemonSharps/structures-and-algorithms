@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
@@ -38,7 +36,7 @@ namespace structures_and_algorithms.Algorithms.Sort
             }
             for (int i = 0; i < tempArr.Length; i++)
             {
-                arr[lIndex + 1] = tempArr[i];
+                arr[lIndex+i] = tempArr[i];
             }
         }
         static Int32[] MergeSrt(Int32[] arr, Int32 lowI,Int32 highI)
