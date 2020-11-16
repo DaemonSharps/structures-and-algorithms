@@ -8,7 +8,7 @@ using structures_and_algorithms.Algorithms.Sort;
 namespace structures_and_algorithms
 {
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
             string line = "_____________________________";
@@ -50,22 +50,39 @@ namespace structures_and_algorithms
             {
                 Console.WriteLine("Sorts");
                 Console.WriteLine(line);
-                Console.WriteLine("Enter numbers");
-               var entNums= Console.ReadLine().Split(new[] { " ", ",", ";" },StringSplitOptions.RemoveEmptyEntries);
-                var numbersArr = new int[entNums.Length];
-                for (int i=0;i<entNums.Length;i++)
+                /*  Console.WriteLine("Enter numbers");
+                 var entNums= Console.ReadLine().Split(new[] { " ", ",", ";" },StringSplitOptions.RemoveEmptyEntries);
+                  var numbersArr = new int[entNums.Length];
+                  for (int i=0;i<entNums.Length;i++)
+                  {
+                      numbersArr[i] = Convert.ToInt32(entNums[i]);
+                  }*/
+                Console.WriteLine("Unsorted array:");
+                var numbersArr = new int[15];
+                Random rnd = new Random();
+                for(Int32 i = 0; i < numbersArr.Length; i++)
                 {
-                    numbersArr[i] = Convert.ToInt32(entNums[i]);
+                    numbersArr[i] = rnd.Next(-5,5);
+                    Console.Write(numbersArr[i]+" ");
                 }
-                /*Console.WriteLine("Sorted array: {0}",string.Join(", ", RandomSort.Sort(numbersArr)));*/ //Can`t wor with big range
+                Console.WriteLine();
+
+                /*Console.WriteLine("Sorted array: {0}",string.Join(", ", RandomSort.Sort(numbersArr)));*/ //Can`t work with big range
+
+                Console.WriteLine("Sorted array Tree: {0}", string.Join(", ", TreeSort.Sort(numbersArr)));
+                Console.WriteLine("Sorted array Combo: {0}", string.Join(", ", CombSort.Sort(numbersArr)));
+                Console.WriteLine("Sorted array Gnome: {0}", string.Join(", ", CountingSort.Sort(numbersArr, 9)));//error
                 Console.WriteLine("Sorted array Bubble: {0}", string.Join(", ", BubbleSort.Sort(numbersArr)));
                 Console.WriteLine("Sorted array Coctail: {0}", string.Join(", ", CocktailSort.Sort(numbersArr)));
                 Console.WriteLine("Sorted array Insertion: {0}", string.Join(", ", InsertionSort.Sort(numbersArr)));
                 Console.WriteLine("Sorted array Stooge: {0}", string.Join(", ", StoogeSort.Sort(numbersArr)));
                 Console.WriteLine("Sorted array Pancake: {0}", string.Join(", ", PancakeSort.Sort(numbersArr)));
                 Console.WriteLine("Sorted array Shell: {0}", string.Join(", ", ShellSort.Sort(numbersArr)));
-                 Console.WriteLine("Sorted array Merge: {0}", string.Join(", ", MergeSort.Sort(numbersArr)));
-               Console.WriteLine("Sorted array Selection: {0}", string.Join(", ", SelectionSort.Sort(numbersArr)));
+                Console.WriteLine("Sorted array Merge: {0}", string.Join(", ", MergeSort.Sort(numbersArr)));
+                Console.WriteLine("Sorted array Selection: {0}", string.Join(", ", SelectionSort.Sort(numbersArr)));
+                Console.WriteLine("Sorted array Quick: {0}", string.Join(", ", QuickSort.Sort(numbersArr)));
+                Console.WriteLine("Sorted array Gnome: {0}", string.Join(", ", GnomeSort.Sort(numbersArr)));
+
                 Console.WriteLine(line);
             }
             
