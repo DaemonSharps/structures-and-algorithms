@@ -5,9 +5,9 @@ using System.Text;
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-    public static class TreeSort
+    public class TreeSort:ISort
     {
-        public static Int32[] Sort(Int32[] arr)
+        public Int32[] Sort(Int32[] arr)
         {
             var treenode = new TreeNode(arr[0]);
             for (int i = 1; i < arr.Length; i++)

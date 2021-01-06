@@ -6,7 +6,7 @@ using System.Transactions;
 
 namespace structures_and_algorithms.LInkedList
 {
-    class LinkedList<T> : IEnumerable<T>
+    class MyLinkedList<T> : IEnumerable<T>
     {
         Node<T> head;
         Node<T> tail;

@@ -2,9 +2,9 @@
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-   public static class BubbleSort
+   public class BubbleSort:ISort
     {
-      public  static int[] Sort(int[] arr)
+      public  int[] Sort(int[] arr)
         {
             var length = arr.Length;
             for (int i = 1; i < length; i++)

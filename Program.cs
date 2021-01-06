@@ -4,6 +4,7 @@ using structures_and_algorithms.Algorithms.Levenstain_distance;
 using structures_and_algorithms.Algorithms.Fast_Pow;
 using structures_and_algorithms.LInkedList;
 using structures_and_algorithms.Algorithms.Sort;
+using System.Collections.Generic;
 
 namespace structures_and_algorithms
 {
@@ -16,7 +17,7 @@ namespace structures_and_algorithms
                 Console.WriteLine("Linked List");
 
                 Console.WriteLine(line);
-                LinkedList<string> LList = new LinkedList<string>();
+                MyLinkedList<string> LList = new MyLinkedList<string>();
                 LList.Add("dashulya");
                 LList.Add("Deniska");
                 foreach (string s in LList)
@@ -57,32 +58,25 @@ namespace structures_and_algorithms
                   {
                       numbersArr[i] = Convert.ToInt32(entNums[i]);
                   }*/
-                Console.WriteLine("Unsorted array:");
-                var numbersArr = new int[15];
-                Random rnd = new Random();
-                for(Int32 i = 0; i < numbersArr.Length; i++)
-                {
-                    numbersArr[i] = rnd.Next(-5,5);
-                    Console.Write(numbersArr[i]+" ");
-                }
-                Console.WriteLine();
+
 
                 /*Console.WriteLine("Sorted array: {0}",string.Join(", ", RandomSort.Sort(numbersArr)));*/ //Can`t work with big range
-
-                Console.WriteLine("Sorted array Tree: {0}", string.Join(", ", TreeSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Combo: {0}", string.Join(", ", CombSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Gnome: {0}", string.Join(", ", CountingSort.Sort(numbersArr, 9)));//error
-                Console.WriteLine("Sorted array Bubble: {0}", string.Join(", ", BubbleSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Coctail: {0}", string.Join(", ", CocktailSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Insertion: {0}", string.Join(", ", InsertionSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Stooge: {0}", string.Join(", ", StoogeSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Pancake: {0}", string.Join(", ", PancakeSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Shell: {0}", string.Join(", ", ShellSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Merge: {0}", string.Join(", ", MergeSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Selection: {0}", string.Join(", ", SelectionSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Quick: {0}", string.Join(", ", QuickSort.Sort(numbersArr)));
-                Console.WriteLine("Sorted array Gnome: {0}", string.Join(", ", GnomeSort.Sort(numbersArr)));
-
+                List<ISort> Sorts = new List<ISort>() {
+                    new BubbleSort(),
+                    new CocktailSort(),
+                    new CombSort(),
+                    new CountingSort(),
+                    new GnomeSort(),
+                    new InsertionSort(),
+                    new MergeSort(),
+                    new PancakeSort(),
+                    new QuickSort(),
+                    new SelectionSort(),
+                    new ShellSort(),
+                    new StoogeSort(),
+                    new TreeSort()
+                };
+                SortStarter.Start(Sorts);
                 Console.WriteLine(line);
             }
             

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-    public static class GnomeSort
+    public class GnomeSort:ISort
     {
-        public static Int32[] Sort(Int32[] arr)
+        public Int32[] Sort(Int32[] arr)
         {
             var index = 1;
             var nextIndex = index++;
@@ -14,7 +14,7 @@ namespace structures_and_algorithms.Algorithms.Sort
             {
                 if (arr[index-1]<arr[index])
                 {
-                    index++;
+                    index=nextIndex;
                     nextIndex++;
                 }
                 else

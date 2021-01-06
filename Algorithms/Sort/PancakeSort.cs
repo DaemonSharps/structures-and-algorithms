@@ -2,7 +2,7 @@
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-    public static class PancakeSort
+    public class PancakeSort:ISort
     {
         static Int32 IndexOfMax(Int32[] arr,Int32 subArrEndI) // Get Index of Max element from subarray
         {
@@ -24,7 +24,7 @@ namespace structures_and_algorithms.Algorithms.Sort
             }
             return arr;
         }
-        public static Int32[] Sort(Int32[] arr)
+        public Int32[] Sort(Int32[] arr)
         {
             for (var subArrLength=arr.Length-1; subArrLength>=0; subArrLength--)
             {

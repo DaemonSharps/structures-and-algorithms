@@ -4,13 +4,13 @@ using System.Text;
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-    public static class CombSort
+    public class CombSort:ISort
     { static Int32 GetNextStep(int s)
         {
             s = s * 1000 / 1247;
             return s > 1 ? s : 1;
         }
-        public static Int32[] Sort(Int32[] arr)
+        public Int32[] Sort(Int32[] arr)
         {
             var arrLeng = arr.Length;
             var currStep = arrLeng - 1;
@@ -25,7 +25,7 @@ namespace structures_and_algorithms.Algorithms.Sort
                 }
                 currStep = GetNextStep(currStep);
             }
-             arr=BubbleSort.Sort(arr);
+             arr=new BubbleSort().Sort(arr);
             return arr;
         }
     }

@@ -2,9 +2,9 @@
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-   public static class ShellSort
+   public class ShellSort:ISort
     {
-        public static Int32[] Sort(Int32[] arr)
+        public Int32[] Sort(Int32[] arr)
         {
             var d = arr.Length / 2;// distance between two elements
             while (d>=1)

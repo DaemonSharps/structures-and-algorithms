@@ -4,9 +4,9 @@ using System.Text;
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-    class QuickSort
+    public class QuickSort:ISort
     {
-        static Int32 Patrition(Int32[] arr, Int32 MaxI, Int32 MinI)
+        static Int32 Patrition(Int32[] arr, Int32 MinI, Int32 MaxI)
         {
             var pivot = MinI - 1;
             for (int i = MinI; i < MaxI; i++)
@@ -21,7 +21,7 @@ namespace structures_and_algorithms.Algorithms.Sort
             Swap.Go(ref arr[pivot],ref arr[MaxI]);
             return pivot;
         }
-        static Int32[] Sort(Int32[] arr,Int32 MinI,Int32 MaxI)
+       static Int32[] Sort(Int32[] arr,Int32 MinI,Int32 MaxI)
         {
             if (MinI>=MaxI)
             {
@@ -32,7 +32,7 @@ namespace structures_and_algorithms.Algorithms.Sort
             Sort(arr,PivotI+1,MaxI);
             return arr;
         }
-       public static Int32[] Sort(Int32[] arr)
+       public Int32[] Sort(Int32[] arr)
         {
             return Sort(arr,0,arr.Length-1);
         }

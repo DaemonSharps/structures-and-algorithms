@@ -3,9 +3,9 @@
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-  public static  class CocktailSort
+  public class CocktailSort:ISort
     {
-      public  static Int32[] Sort(Int32[] arr)
+      public  Int32[] Sort(Int32[] arr)
         {
             
             for (int i = 0; i < arr.Length/2; i++)

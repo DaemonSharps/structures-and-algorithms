@@ -3,7 +3,7 @@
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-    public static class RandomSort
+    public class RandomSort:ISort
     {
         static bool IsSorted(int[] arr)
         {
@@ -29,7 +29,7 @@ namespace structures_and_algorithms.Algorithms.Sort
             }
             return arr;
         } 
-        public static int[] Sort(int[] arr)
+        public  int[] Sort(int[] arr)
         {
             while (!IsSorted(arr))
             {

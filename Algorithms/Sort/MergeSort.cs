@@ -2,7 +2,7 @@
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-  public static class MergeSort
+  public class MergeSort:ISort
     { 
         static void Merge(Int32[] arr,Int32 lIndex,Int32 mIndex,Int32 hIndex)
         {
@@ -50,7 +50,7 @@ namespace structures_and_algorithms.Algorithms.Sort
             }
             return arr;
         }
-        public static Int32[] Sort(Int32[] arr)
+        public Int32[] Sort(Int32[] arr)
         {
             return MergeSrt(arr,0,arr.Length-1);
         }

@@ -3,7 +3,7 @@
 
 namespace structures_and_algorithms.Algorithms.Sort
 {
-    public static class StoogeSort
+    public class StoogeSort:ISort
     {
         static Int32[] Sort(Int32[] arr,Int32 startI, Int32 EndI)
         {
@@ -20,7 +20,7 @@ namespace structures_and_algorithms.Algorithms.Sort
             }
             return arr;
         }
-        public static Int32[] Sort(Int32[] arr)
+        public Int32[] Sort(Int32[] arr)
         {
             return Sort(arr,0,arr.Length-1);
         }
