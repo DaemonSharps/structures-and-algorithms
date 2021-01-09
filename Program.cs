@@ -4,7 +4,9 @@ using structures_and_algorithms.Algorithms.Levenstain_distance;
 using structures_and_algorithms.Algorithms.Fast_Pow;
 using structures_and_algorithms.LInkedList;
 using structures_and_algorithms.Algorithms.Sort;
+using structures_and_algorithms.Algorithms.Search;
 using System.Collections.Generic;
+using structures_and_algorithms.Algorithms;
 
 namespace structures_and_algorithms
 {
@@ -12,7 +14,7 @@ namespace structures_and_algorithms
     { 
         static void Main(string[] args)
         {
-            string line = "_____________________________";
+            string line = Environment.NewLine;
             {
                 Console.WriteLine("Linked List");
 
@@ -51,13 +53,6 @@ namespace structures_and_algorithms
             {
                 Console.WriteLine("Sorts");
                 Console.WriteLine(line);
-                /*  Console.WriteLine("Enter numbers");
-                 var entNums= Console.ReadLine().Split(new[] { " ", ",", ";" },StringSplitOptions.RemoveEmptyEntries);
-                  var numbersArr = new int[entNums.Length];
-                  for (int i=0;i<entNums.Length;i++)
-                  {
-                      numbersArr[i] = Convert.ToInt32(entNums[i]);
-                  }*/
 
 
                 /*Console.WriteLine("Sorted array: {0}",string.Join(", ", RandomSort.Sort(numbersArr)));*/ //Can`t work with big range
@@ -79,7 +74,22 @@ namespace structures_and_algorithms
                 SortStarter.Start(Sorts);
                 Console.WriteLine(line);
             }
-            
+
+            RandomInt32Array rnd = new RandomInt32Array(50,-10,25);
+            var TestArr=rnd.Array;
+            Console.WriteLine("Search");
+            Console.WriteLine(line);
+            Console.WriteLine("Maximum ind: "+ TestArr.IndOfMaximum());
+            Console.WriteLine("Minimum ind: " + TestArr.IndOfMinimum());
+            Console.WriteLine("Maximum: " + TestArr.MaximumVal());
+            Console.WriteLine("Minimum: " + TestArr.MinimumVal());
+            Console.WriteLine(line);
+            QuickSort QS = new QuickSort();
+            TestArr=QS.Sort(TestArr);
+            Console.WriteLine("TestArray 5 index " + BinarySearch.BinSearch(TestArr, 5, 0, TestArr.Length-1));
+            Console.WriteLine(line);
+            Console.WriteLine("Поиск длиннейшей общей подстроки. Введите два слова ниже");
+            Console.WriteLine("Общая подстрока: "+ LongestComonString.Search(Console.ReadLine(), Console.ReadLine())); 
             Console.ReadLine();
         }
     }
