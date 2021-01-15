@@ -4,8 +4,10 @@ using System.Text;
 
 namespace structures_and_algorithms.Algorithms.Search
 {
-   public static class LongestComonString
-    {
+    public static class LongestComonString
+    {/// <summary>
+     /// Поиск наибольшей общей подстроки
+     /// </summary>
         public static string Search(string Word_1,string Word_2)
         {
             var n = Word_1.Length;

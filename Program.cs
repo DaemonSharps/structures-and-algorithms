@@ -36,7 +36,7 @@ namespace structures_and_algorithms
                 for (int i=0;i<5;i++)
                 {
                     Console.WriteLine($"{i} in {i*2} ={Pow.Recursive(i, i * 2)}");
-                    Console.WriteLine($"{i} in {i + 2} ={Pow.Iter(i, i * 2)}");
+                    Console.WriteLine($"{i} in {i + 2} ={Pow.Iter(i, i + 2)}");
                     Console.WriteLine($"{i} in {15} ={Pow.Byte(i, 15)}");
                 }
                 Console.WriteLine(line);
