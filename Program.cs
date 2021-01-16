@@ -16,7 +16,7 @@ namespace structures_and_algorithms
         static void Main(string[] args)
         {
             string line = Environment.NewLine;
-            {
+            /*{
                 Console.WriteLine("Linked List");
 
                 Console.WriteLine(line);
@@ -56,7 +56,7 @@ namespace structures_and_algorithms
                 Console.WriteLine(line);
 
 
-                /*Console.WriteLine("Sorted array: {0}",string.Join(", ", RandomSort.Sort(numbersArr)));*/ //Can`t work with big range
+                *//*Console.WriteLine("Sorted array: {0}",string.Join(", ", RandomSort.Sort(numbersArr)));*//* //Can`t work with big range
                 List<ISort> Sorts = new List<ISort>() {
                     new BubbleSort(),
                     new CocktailSort(),
@@ -74,9 +74,9 @@ namespace structures_and_algorithms
                 };
                 SortStarter.Start(Sorts);
                 Console.WriteLine(line);
-            }
+            }*/
 
-            RandomInt32Array rnd = new RandomInt32Array(50,-10,25);
+            /*RandomInt32Array rnd = new RandomInt32Array(50,-10,25);
             var TestArr=rnd.Array;
             Console.WriteLine("Search");
             Console.WriteLine(line);
@@ -90,8 +90,11 @@ namespace structures_and_algorithms
             Console.WriteLine("TestArray 5 index " + BinarySearch.BinSearch(TestArr, 5, 0, TestArr.Length-1));
             Console.WriteLine(line);
             Console.WriteLine("Поиск длиннейшей общей подстроки. Введите два слова ниже");
-            Console.WriteLine("Общая подстрока: "+ LongestComonString.Search(Console.ReadLine(), Console.ReadLine())+line); 
-
+            Console.WriteLine("Общая подстрока: "+ LongestComonString.Search(Console.ReadLine(), Console.ReadLine())+line);*/
+            var g = DikstraHelper.CreateGraph();
+            var D = new DiikstraAlgoritm(g);
+            var path=D.FindShortestPath("A","O");
+            Console.WriteLine(path);
             Console.ReadLine();
         }
     }

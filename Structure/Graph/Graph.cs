@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data;
 
 namespace structures_and_algorithms.Structure.Graph
 {
@@ -23,9 +24,16 @@ namespace structures_and_algorithms.Structure.Graph
         /// Добавить вершину
         /// </summary>
         /// <param name="vertexName">Имя вершины</param>
-        public void AddVertex(string vertexName)
+        public void AddVertex(string vertexName,params string[] par)
         {
             Vertices.Add(new GraphVertex(vertexName));
+            if (par!=null)
+            {
+                for (int i = 0; i < par.Length; i++)
+                {
+                    Vertices.Add(new GraphVertex(par[i]));
+                }
+            }
         }
         /// <summary>
         /// Поиск вершины
@@ -36,12 +44,13 @@ namespace structures_and_algorithms.Structure.Graph
         {
             foreach (var vert in Vertices)
             {
-                if (vert.Name.Equals(vert))
+                if (vert.Name.Equals(vertexName))
                 {
                     return vert;
                 }
             }
             return null;
+            
         }
         /// <summary>
         /// Дабавление ребра
@@ -53,6 +62,10 @@ namespace structures_and_algorithms.Structure.Graph
         {
             var v1 = FindVertex(firstName);
             var v2 = FindVertex(secondName);
+            if (v1==null||v2==null)
+            {
+                throw new Exception($"Вершина не найдена в списке вершин: {(v1==null?firstName:secondName)}");
+            }
             if (v2!=null&&v1!=null)
             {
                 v1.AddEdge(new GraphEdge(v2,weight));
