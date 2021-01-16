@@ -5,6 +5,7 @@ using structures_and_algorithms.Algorithms.Fast_Pow;
 using structures_and_algorithms.LInkedList;
 using structures_and_algorithms.Algorithms.Sort;
 using structures_and_algorithms.Algorithms.Search;
+using structures_and_algorithms.Algorithms.Search.Dikstra;
 using System.Collections.Generic;
 using structures_and_algorithms.Algorithms;
 
@@ -89,7 +90,8 @@ namespace structures_and_algorithms
             Console.WriteLine("TestArray 5 index " + BinarySearch.BinSearch(TestArr, 5, 0, TestArr.Length-1));
             Console.WriteLine(line);
             Console.WriteLine("Поиск длиннейшей общей подстроки. Введите два слова ниже");
-            Console.WriteLine("Общая подстрока: "+ LongestComonString.Search(Console.ReadLine(), Console.ReadLine())); 
+            Console.WriteLine("Общая подстрока: "+ LongestComonString.Search(Console.ReadLine(), Console.ReadLine())+line); 
+
             Console.ReadLine();
         }
     }
