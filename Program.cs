@@ -8,6 +8,7 @@ using structures_and_algorithms.Algorithms.Search;
 using structures_and_algorithms.Algorithms.Search.Dikstra;
 using System.Collections.Generic;
 using structures_and_algorithms.Algorithms;
+using structures_and_algorithms.Algorithms.Numerical_methods;
 
 namespace structures_and_algorithms
 {
@@ -16,7 +17,7 @@ namespace structures_and_algorithms
         static void Main(string[] args)
         {
             string line = Environment.NewLine;
-            /*{
+            {
                 Console.WriteLine("Linked List");
 
                 Console.WriteLine(line);
@@ -34,9 +35,9 @@ namespace structures_and_algorithms
             {
                 Console.WriteLine("Fast Pow");
                 Console.WriteLine(line);
-                for (int i=0;i<5;i++)
+                for (int i = 0; i < 5; i++)
                 {
-                    Console.WriteLine($"{i} in {i*2} ={Pow.Recursive(i, i * 2)}");
+                    Console.WriteLine($"{i} in {i * 2} ={Pow.Recursive(i, i * 2)}");
                     Console.WriteLine($"{i} in {i + 2} ={Pow.Iter(i, i + 2)}");
                     Console.WriteLine($"{i} in {15} ={Pow.Byte(i, 15)}");
                 }
@@ -47,8 +48,8 @@ namespace structures_and_algorithms
                 Console.WriteLine(line);
                 Console.Write("Enter First word"); var s1 = Console.ReadLine();
                 Console.Write("Enter Second word"); var s2 = Console.ReadLine();
-                Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1,s2 )}");
-                Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1, s2,true)}");
+                Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1, s2)}");
+                Console.WriteLine($"Расстояние Левенштейна для слов {s1} и {s2} равно {Levenstain_Distance.Find(s1, s2, true)}");
                 Console.WriteLine(line);
             }
             {
@@ -56,7 +57,7 @@ namespace structures_and_algorithms
                 Console.WriteLine(line);
 
 
-                *//*Console.WriteLine("Sorted array: {0}",string.Join(", ", RandomSort.Sort(numbersArr)));*//* //Can`t work with big range
+                Console.WriteLine("Sorted array: {0}", string.Join(", ", RandomSort.Sort(numbersArr))); //Can`t work with big range
                 List<ISort> Sorts = new List<ISort>() {
                     new BubbleSort(),
                     new CocktailSort(),
@@ -74,27 +75,32 @@ namespace structures_and_algorithms
                 };
                 SortStarter.Start(Sorts);
                 Console.WriteLine(line);
-            }*/
+            }
 
-            /*RandomInt32Array rnd = new RandomInt32Array(50,-10,25);
-            var TestArr=rnd.Array;
+            RandomInt32Array rnd = new RandomInt32Array(50, -10, 25);
+            var TestArr = rnd.Array;
             Console.WriteLine("Search");
             Console.WriteLine(line);
-            Console.WriteLine("Maximum ind: "+ TestArr.IndOfMaximum());
+            Console.WriteLine("Maximum ind: " + TestArr.IndOfMaximum());
             Console.WriteLine("Minimum ind: " + TestArr.IndOfMinimum());
             Console.WriteLine("Maximum: " + TestArr.MaximumVal());
             Console.WriteLine("Minimum: " + TestArr.MinimumVal());
             Console.WriteLine(line);
             QuickSort QS = new QuickSort();
-            TestArr=QS.Sort(TestArr);
-            Console.WriteLine("TestArray 5 index " + BinarySearch.BinSearch(TestArr, 5, 0, TestArr.Length-1));
+            TestArr = QS.Sort(TestArr);
+            Console.WriteLine("TestArray 5 index " + BinarySearch.BinSearch(TestArr, 5, 0, TestArr.Length - 1));
             Console.WriteLine(line);
             Console.WriteLine("Поиск длиннейшей общей подстроки. Введите два слова ниже");
-            Console.WriteLine("Общая подстрока: "+ LongestComonString.Search(Console.ReadLine(), Console.ReadLine())+line);*/
+            Console.WriteLine("Общая подстрока: " + LongestComonString.Search(Console.ReadLine(), Console.ReadLine()) + line);
+            Console.WriteLine("Граф. Поиск кратчайшего пути.");
             var g = DikstraHelper.CreateGraph();
             var D = new DiikstraAlgoritm(g);
-            var path=D.FindShortestPath("A","O");
+            var path = D.FindShortestPath("A", "D");
             Console.WriteLine(path);
+            Console.WriteLine(line);
+            double f(double x) =>(x*5-1)/5;
+            var simpRes=Simpson.Integral(f,0,10,1000);
+            Console.WriteLine($"Интеграл функции х^5 от 0 до 10 равен {simpRes}" +line); ;
             Console.ReadLine();
         }
     }
